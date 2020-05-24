@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import {Text, Image, StatusBar, View, TextInput, Button, StyleSheet, TouchableOpacity, ActivityIndicator, LayoutAnimation } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import firebase from 'firebase';
-import Icon from 'react-native-vector-icons/Ionicons.flow';
+import Icon from 'react-native-vector-icons/AntDesign';
+const myIcon = <Icon name="home" size={30} color="#900" />;
+
 export default class LoginScreen extends React.Component {
     static navigationOptions = {
         header: null,
@@ -26,10 +28,8 @@ export default class LoginScreen extends React.Component {
         return (
             <View style = {styles.container}>
                   <StatusBar barStyle = "light-content"></StatusBar>
-                <Image style = {{width: 300, height: 300, alignSelf: 'center', marginTop: 50}}source ={require('../Components/forreallogo.png')}></Image> 
-                <TouchableOpacity style = {styles.back} onPress={() => this.props.navigation.goBack()}>
-                    <Icon name="leftcircle" size = {32}></Icon> 
-                </TouchableOpacity> 
+                 <Image style = {{width: 300, height: 300, alignSelf: 'center', marginTop: 50}}source ={require('../Components/forreallogo.png')}></Image> 
+                {myIcon}
                 <Text style = {styles.greeting}>
                     {'Hello again. \n Welcome back.'}
                     
