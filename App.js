@@ -6,7 +6,7 @@ import LoginScreen from './Screens/LoginScreen'
 import RegisterScreen from './Screens/RegisterScreen'
 import {createBottomTabNavigator} from 'react-navigation-tabs' 
 import HomeScreen from './Screens/HomeScreen'
-import firebase from 'firebase'
+import from 'firebase'
 
 var firebaseConfig = {
     apiKey: "AIzaSyA6obQe1Drdr-uWuvOQrLXDN03sI-FmrDQ",
