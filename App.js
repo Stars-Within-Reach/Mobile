@@ -7,6 +7,12 @@ import RegisterScreen from './Screens/RegisterScreen'
 import {createBottomTabNavigator} from 'react-navigation-tabs' 
 import HomeScreen from './Screens/HomeScreen'
 import firebase from 'firebase';
+import Icon from 'react-native-vector-icons/AntDesign';
+import MessageScreen from './Screens/MessageScreen'
+import ProfileScreen from './Screens/ProfileScreen'
+import Notifications from './Screens/Notifications'
+import PostScreen from './Screens/PostScreen'
+
 
 var firebaseConfig = {
     apiKey: "AIzaSyA6obQe1Drdr-uWuvOQrLXDN03sI-FmrDQ",
@@ -25,9 +31,43 @@ var firebaseConfig = {
   
   // firebase.analytics(); 
 
-  const AppStack = createStackNavigator({
-      Home: HomeScreen
-  })
+  const AppTabNavigator = createBottomTabNavigator(
+      {
+          Home: {
+              screen: HomeScreen,
+              navigationOptions: {
+                  tabBarIcon: ({tintColor}) => <Icon name="home" size = {24} color = {"black"}/> 
+              }
+          },
+          Connect: {
+            screen: MessageScreen,
+            navigationOptions: {
+                tabBarIcon: ({tintColor}) => <Icon name="mail" size = {24} color = {"black"}/> 
+            }
+        },
+        Blogs: {
+            screen: PostScreen,
+            navigationOptions: {
+                tabBarIcon: ({}) => <Icon name="book" size = {24} 
+                style ={{shadowColor: "#E9446A",
+                        shadowOffset: {width: 0, height: 0},
+                        shadowRadius: 10,
+                        shadowOpacity: 0.3,
+                }}/> 
+            }
+        },
+      },
+      {
+          tabBarOptions: {
+              activeBackgroundColor: "lightgrey",
+              inactiveTintColor: "blue",
+              showLabel: false,
+              
+          }
+          
+      },
+
+  )
   const AuthStack = createStackNavigator({
     Login: LoginScreen,
     Register: RegisterScreen
@@ -39,7 +79,7 @@ var firebaseConfig = {
       createSwitchNavigator(
           {
               Loading: LoadingScreen,
-              App: AppStack,
+              App: AppTabNavigator,
               Auth: AuthStack
           },
           {

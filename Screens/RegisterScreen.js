@@ -21,7 +21,7 @@ export default class RegisterScreen extends React.Component {
         .then(userCredentials => {
             return userCredentials.user.updateProfile({
                 displayName: this.state.name
-            })
+            }) 
         })
         .catch(error => this.setState({errorMessage: error.message}))
     }

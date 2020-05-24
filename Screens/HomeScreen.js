@@ -19,21 +19,21 @@ export default class HomeScreen extends React.Component {
         LayoutAnimation.easeInEaseOut();
 
         return (
-            <View styles = {Styles.container}>
-                
-                <Text> Hi {this.state.email}!</Text>
-                <TouchableOpacity style = {{marginTop: 32}} onPress= {this.signOutUser}>
+            <View style = {styles.container}>
+            <Text> Home Screen</Text>
+             <TouchableOpacity style = {{marginTop: 32}} onPress= {this.signOutUser}>
                     <Text> Logout</Text>
-                </TouchableOpacity>
-            </View>
+                </TouchableOpacity> 
+        </View>
+            
         )
     }
 }
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
-        flex:1,
-        justifyContent: 'center',
+        flex: 1,
         alignItems: 'center',
+        justifyContent: 'center'
     }
 })
