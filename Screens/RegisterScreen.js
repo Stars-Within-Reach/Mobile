@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {Text, View, StatusBar, Image, TextInput, Button, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import firebase from 'firebase';
-
+import Icon from 'react-native-vector-icons/AntDesign';
 export default class RegisterScreen extends React.Component {
 
     static navigationOptions = {
         headerShown: false
     }
-    
+
     state = {
         name: "",
         email: "",
@@ -30,7 +30,8 @@ export default class RegisterScreen extends React.Component {
         return (
             <View style = {styles.container}>
                 <StatusBar barStyle = "light-content"></StatusBar>
-                <Image style = {{width: 300, height: 300, alignSelf: 'center', marginTop: 50}}source ={require('../Components/forreallogo.png')}></Image> 
+                <Image style = {{width: 300, height: 300, alignSelf: 'center', marginTop: 50}}source ={require('../Components/forreallogo.png')}></Image>
+                <Icon name="back" onPress = {() => this.props.navigation.goBack()} size={30} color="#900" style = {{position: "absolute", top: 40, left: 15}}/> 
                 <Text style = {styles.greeting}>
                    {'Hello. \n Sign Up to get started.'}
                     

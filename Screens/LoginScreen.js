@@ -4,7 +4,6 @@ import {Text, Image, StatusBar, View, TextInput, Button, StyleSheet, TouchableOp
 import { NavigationContainer } from '@react-navigation/native';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/AntDesign';
-const myIcon = <Icon name="home" size={30} color="#900" />;
 
 export default class LoginScreen extends React.Component {
     static navigationOptions = {
@@ -29,7 +28,9 @@ export default class LoginScreen extends React.Component {
             <View style = {styles.container}>
                   <StatusBar barStyle = "light-content"></StatusBar>
                  <Image style = {{width: 300, height: 300, alignSelf: 'center', marginTop: 50}}source ={require('../Components/forreallogo.png')}></Image> 
-                {myIcon}
+                    
+            
+
                 <Text style = {styles.greeting}>
                     {'Hello again. \n Welcome back.'}
                     
