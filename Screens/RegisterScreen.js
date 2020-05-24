@@ -4,10 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import firebase from 'firebase';
 
 export default class RegisterScreen extends React.Component {
+
     static navigationOptions = {
-        header: null,
         headerShown: false
     }
+    
     state = {
         name: "",
         email: "",

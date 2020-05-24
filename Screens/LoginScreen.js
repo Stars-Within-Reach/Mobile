@@ -8,9 +8,9 @@ const myIcon = <Icon name="home" size={30} color="#900" />;
 
 export default class LoginScreen extends React.Component {
     static navigationOptions = {
-        header: null,
         headerShown: false
     };
+    
     state = {
         email: "",
         password: "",
